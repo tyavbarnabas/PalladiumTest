@@ -1,5 +1,6 @@
 package com.palladium.palladiumtestapp.serviceImpl;
 
+import com.palladium.palladiumtestapp.GeneralResponseEnum;
 import com.palladium.palladiumtestapp.dto.UserRequest;
 import com.palladium.palladiumtestapp.dto.UserResponse;
 import com.palladium.palladiumtestapp.exception.UserAlreadyExistException;
@@ -45,8 +46,8 @@ public class UserServiceImpl implements UserService {
         log.info("User saved to the database ....{}", saveUser);
 
         return UserResponse.builder()
-                .ResponseCode("000")
-                .message("Registration Completed Successfully")
+                .ResponseCode(GeneralResponseEnum.SUCCESS.getResponseCode())
+                .message(GeneralResponseEnum.SUCCESS.getMessage())
                 .details(newUser)
                 .build();
 
@@ -63,8 +64,8 @@ public class UserServiceImpl implements UserService {
         }
 
         return UserResponse.builder()
-                .ResponseCode("000")
-                .message("Completed Successfully")
+                .ResponseCode(GeneralResponseEnum.SUCCESS.getResponseCode())
+                .message(GeneralResponseEnum.SUCCESS.getMessage())
                 .details(users)
                 .build();
     }

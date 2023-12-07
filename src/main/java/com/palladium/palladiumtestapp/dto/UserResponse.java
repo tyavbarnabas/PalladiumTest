@@ -14,7 +14,6 @@ import lombok.*;
 public class UserResponse {
 
     private String ResponseCode;
-
     private String message;
     private Object details;
 
